@@ -1,0 +1,20 @@
+
+        if(head .next==null)return null;
+        ListNode curr=head;
+        int size=0;
+        int i=1;
+        while(curr!=null){
+           
+            curr=curr.next;
+             size++;
+        }
+        int search=size-n;
+        ListNode prev=head;
+        while(i<search){
+         prev=prev.next;
+         i++;   
+        }
+        prev.next=prev.next.next;
+        return head;
+    }
+}

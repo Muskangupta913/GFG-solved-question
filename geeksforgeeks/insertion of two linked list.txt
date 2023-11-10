@@ -1,0 +1,16 @@
+HashSet<Integer> set=new HashSet<>();
+       while (head2!=null){
+           set.add(head2.data);
+           head2=head2.next;
+       }
+       Node ans=new Node(-2);
+       Node temp=ans;
+       while (head1!=null){
+           if(set.contains(head1.data)){
+               temp.next=new Node(head1.data);
+               temp=temp.next;
+           }
+           head1=head1.next;
+       }
+       return ans.next;
+        

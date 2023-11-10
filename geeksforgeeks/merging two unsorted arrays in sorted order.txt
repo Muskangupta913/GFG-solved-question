@@ -1,0 +1,28 @@
+class Solution
+{
+    void sortedMerge(long A[], long B[], long res[], int N,int M)
+    {
+        // Your code goes here
+        // Your code goes here
+        long r[]=new long[N+M];
+        int k=0;
+        for(int i=0;i<N;i++)
+        {
+            r[k]=A[i];
+            k++;
+        }
+        for(int i=0;i<M;i++)
+        {
+            r[k]=B[i];
+            k++;
+        }
+        Arrays.sort(r);
+        
+        for(int i=0;i<N+M;i++)
+        {
+            res[i]=r[i];
+        }
+     
+        
+    }
+}

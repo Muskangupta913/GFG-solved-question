@@ -1,0 +1,25 @@
+class Solution{
+    public ArrayList<Integer> firstAndLast(int arr[], int n, int x){
+ArrayList<Integer> ar = new  ArrayList<Integer>();
+        int p1=0;
+        int p2=n-1;
+        while(p1<n){
+            if(arr[p1] == x){
+                ar.add(p1);
+                break;
+            }
+            p1++;
+        }
+        while(p2>=0){
+            if(arr[p2] == x){
+                ar.add(p2);
+                break;
+            }
+            p2--;
+        }
+        if(ar.size()==0){
+            ar.add(-1);
+        }
+        return ar;
+    }
+}

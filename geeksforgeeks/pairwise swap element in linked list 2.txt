@@ -1,0 +1,16 @@
+Node dummy =new Node(0);
+        dummy.next=head;
+        Node curr=dummy;
+        while(curr.next!=null && curr.next.next!=null){
+            Node s1=curr.next;
+            Node s2=curr.next.next;
+             s1.next=s2.next;
+             s2.next=s1;
+             
+             
+             curr.next=s2;
+             curr=s1;
+        }
+        return dummy.next;
+        
+        

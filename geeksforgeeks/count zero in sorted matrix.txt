@@ -1,0 +1,22 @@
+class GfG
+{
+    /*you are required to complete this method*/
+    int countZeros(int A[][], int N)
+    {
+       int i=0;
+       int j=N-1;
+       int ans=0;
+      while(i<N && j>=0){
+          if(A[i][j]==1){
+          j--;
+          }
+          else{
+          ans=ans+(j+1);
+          i++;
+          }
+      }
+        
+     return ans; 
+    }
+    
+}

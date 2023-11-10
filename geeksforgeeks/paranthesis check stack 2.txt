@@ -1,0 +1,24 @@
+Stack<Character> p = new Stack<>();
+        for(int i=0;i<x.length();i++){
+            char curr = x.charAt(i);
+            if ((curr =='{') ||(curr =='[') ||(curr =='(' )){
+                p.push(x.charAt(i));
+             
+            }else  
+                if (p.isEmpty()){
+            return false;
+             }
+             else if((curr !='{') ||(curr !='[') ||(curr !='(' )){
+            
+            if ((p.peek()=='(' && curr ==')')||(p.peek()=='[' && curr ==']')||(p.peek()=='{' && curr =='}')){
+             p.pop();
+         
+          
+             }else  if (p.peek()=='(' && curr !=')'||p.peek()=='[' && curr !=']' ||p.peek()=='{' && curr !='}'){
+
+            return false;
+               }
+            }
+        // add your code here
+        }
+          return p.isEmpty();p

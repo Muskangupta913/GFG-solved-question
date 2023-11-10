@@ -1,0 +1,19 @@
+boolean checkTriplet(int[] arr, int n) {
+          ArrayList<Integer> list = new ArrayList<>();
+        for(int i=0;i<n;i++){
+            arr[i]=arr[i]*arr[i];
+            list.add(arr[i]);
+        }
+        Arrays.sort(arr);
+        for( int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                if(i==j){
+                    continue;
+                }
+                if(list.contains(arr[i]-arr[j])){
+                    return true;
+                }
+            }
+            return false;
+        }
+    }

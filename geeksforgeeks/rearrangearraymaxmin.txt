@@ -1,0 +1,27 @@
+public static void rearrange(  long arr[], int n){
+        //dividend=quetioned*divisor+remainder ,remender=old value ,quotioned =new value
+        
+        int max_index=n-1; //bcs max value is at last index
+        int min_index=0; //min val will start from 1st index
+        int max= arr[n-1]+1; // 6+1=7 ,6%7=6 ,5%7=5 we get the max element
+        int min;
+        for(int i=0;i<n;i++)
+        {
+            if(i%2==0) // as we can see through output that max value is stored in even index,if i%2=0 even so at even index max value is store
+            {
+                arr[i]=(arr[max_index]%max)*max+arr[i]; //max_inde is 6 nd max no is 7 now 6%7=6 and by this we get inde of max value
+                max_index--;
+            }
+            else{
+                arr[i]=(arr[min_index]%min)*min+arr[i];
+                min_index++;
+            }
+        }
+        for(int i=0;i<n;i++)
+        {
+            arr[i]/=max; //we get new value(quetioned) by diving means 6 is new value and 1 is old value for 1st index
+        }
+        
+        
+        
+    }

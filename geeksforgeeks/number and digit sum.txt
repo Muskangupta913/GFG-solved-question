@@ -1,0 +1,24 @@
+class Sol
+{
+    public static long numberCount (long N, long K)
+    {
+         int count=0;
+        
+        for(int i=0;i<=N;i++){
+            if((i-digitSum(i)) >= K){
+                count++;
+            }
+        }
+        return count;
+    }
+    public static long digitSum(long N){
+        long sum=0;
+        while(N>0){
+            long rem=N%10;
+            sum=sum+rem;
+            N/=10;
+        }
+        return sum;
+    }
+    
+}

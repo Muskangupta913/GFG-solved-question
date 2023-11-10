@@ -1,0 +1,20 @@
+class Solution
+{
+    public void move(Stack<Integer>s,int sizeOfStack,int current)
+    {
+        if(current==sizeOfStack/2)
+        {
+            s.pop();
+            return ;
+        }
+        int store=s.peek();
+        s.pop();
+        move(s,sizeOfStack,++current);
+        s.push(store);
+    }
+    //Function to delete middle element of a stack.
+    public void deleteMid(Stack<Integer>s,int sizeOfStack){
+        // code here
+        move(s,sizeOfStack,0);
+    } 
+}

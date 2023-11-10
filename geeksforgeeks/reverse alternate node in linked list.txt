@@ -1,0 +1,34 @@
+
+    public static void rearrange(Node odd)
+    {if(odd==null  && odd.next==null) return;
+        
+        Node Odd=odd;
+        Node even=odd.next;
+        
+        Node temp=even;
+        
+        while(even!=null && even.next!=null){
+            Odd.next=even.next;
+            Odd=Odd.next;
+            
+            even.next=Odd.next;
+            even=even.next;
+        }
+        
+        Odd.next=rev(temp);
+        
+    }
+    public static Node  rev(Node head){
+        Node curr=head;
+        Node previous=null;
+        Node next=null;
+        
+        while(curr!=null){
+            next=curr.next;
+            curr.next=previous;
+            previous=curr;
+            curr=next;
+        }
+        return previous;
+   }
+}

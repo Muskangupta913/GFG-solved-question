@@ -1,0 +1,17 @@
+ if (head==null)
+          {
+              return ;
+          }
+          
+          Node odd=head;
+          Node even=head.next;
+          Node evenhead=even;
+          while(even!=null && even.next!=null)
+          {
+              odd.next=even.next;
+              odd=even.next;
+              even.next=odd.next;
+              even=odd.next;
+          }
+          odd.next=evenhead;
+          

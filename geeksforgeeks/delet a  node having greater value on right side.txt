@@ -1,0 +1,16 @@
+ Node start = head;
+        if(head == null || head.next == null)
+        return head;
+        
+        while(start.next != null){
+            
+            if(start.next.data > start.data){
+                start.data = start.next.data;
+                start.next = start.next.next;
+                start = head;
+            }
+            else{
+                start = start.next;
+            }
+        }
+        return head;

@@ -1,0 +1,32 @@
+class Solution
+{
+    public static void sort012(int a[], int n)
+    {
+    int low=0;//deals with zero
+    int mid=0;//deals with 1s
+    int high=n-1;//deals with 2s means last index
+      
+      while(mid<=high){
+          if(a[mid]==1)//when we find 1s somple increment the mid
+          {
+              mid++;
+          }
+          if(a[mid]==0) //mid find 0 then put mid value into low 
+          {
+              int temp=a[low];
+              a[low]=a[mid];
+              a[mid]=temp;
+              low++;
+              mid++;
+          }
+          else if(a[mid]==2)
+          {
+              int temp=a[high];
+              a[high]=a[mid];
+              a[mid]=temp;
+              high--;
+          }
+          else mid++;
+      }
+    }
+}
